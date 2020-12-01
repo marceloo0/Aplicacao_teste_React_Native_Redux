@@ -59,6 +59,7 @@ const Resgate = () => {
       });
       const total = texto.reduce((acc, x) => acc + x.valor, 0);
       setCount(total);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     },
     [],
   );
