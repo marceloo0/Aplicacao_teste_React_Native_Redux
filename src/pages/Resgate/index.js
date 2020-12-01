@@ -44,32 +44,39 @@ const Resgate = () => {
     return (valor_Total * porcent) / 100;
   }
 
-  const handleEdit = useCallback((e, parcial) => {
-    if (e > parcial) {
+  const handleEdit = useCallback(
+    (e, parcial) => {
+      if (e > parcial) {
+        Alert.alert(
+          'Erro no saldo de resgate',
+          `O valor não pode ser maior que ${formatPrice(parcial)}`,
+        );
+      } else {
+        console.log('ok');
+      }
+      texto.push({
+        valor: parseInt(e),
+      });
+      const total = texto.reduce((acc, x) => acc + x.valor, 0);
+      setCount(total);
+    },
+    [texto],
+  );
+
+  const handleSelectInvestimento = (count, saldo) => {
+    if (count >= 0) {
       Alert.alert(
-        'Erro no saldo de resgate',
-        `O valor não pode ser maior que ${formatPrice(parcial)}`,
+        'Erro no valor de resgate',
+        'Seu valor de resgate não deve ser igual a zero!',
       );
     } else {
-      console.log('não pode');
+      count > saldo
+        ? Alert.alert(
+            'Erro no valor de resgate',
+            'Seu valor de resgate deve ser menor que o saldo total disponível!',
+          )
+        : navigation.navigate('ResgateSucesso');
     }
-    console.log(e);
-    texto.push({
-      valor: parseInt(e),
-    });
-    const total = texto.reduce((acc, x) => acc + x.valor, 0);
-    console.log(total);
-    console.log(texto);
-    setCount(total);
-  }, []);
-
-  const handleSelectInvestimento = () => {
-    count === 0
-      ? Alert.alert(
-          'Erro no valor de resgate',
-          'Seu valor de resgate deve ser maior que zero!',
-        )
-      : navigation.navigate('ResgateSucesso');
   };
 
   return (

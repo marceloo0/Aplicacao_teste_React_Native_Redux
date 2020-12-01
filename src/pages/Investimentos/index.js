@@ -29,7 +29,7 @@ const Investimentos = () => {
         <TopText>R$</TopText>
       </TopBox>
       {data.map((item) => (
-        <ItemInvestimento data={item} />
+        <ItemInvestimento key={item.nome} data={item} />
       ))}
     </Container>
   );
