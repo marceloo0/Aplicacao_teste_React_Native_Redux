@@ -112,7 +112,7 @@ const Resgate = () => {
               <TopText>RESGATE DO SEU JEITO</TopText>
             </TopBox>
             {acoes.map((item) => (
-              <Content>
+              <Content key={item.id}>
                 <DadosContainer>
                   <DadosItemContainer>
                     <DadosItemNome>Ação</DadosItemNome>
@@ -129,8 +129,8 @@ const Resgate = () => {
                   <Edit>
                     <TextLabel color={'#135ee9'}>Valor a resgatar</TextLabel>
                     <TextInput
-                      value={texto}
-                      defaultValue="R$ 0,00"
+                      value={String(texto)}
+                      placeholder="R$ 0,00"
                       keyboardType="numeric"
                       onEndEditing={(e) =>
                         handleEdit(

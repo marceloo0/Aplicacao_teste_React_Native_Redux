@@ -31,7 +31,7 @@ const ItemInvestimento = ({data}) => {
   return (
     <>
       {data.indicadorCarencia === 'N' ? (
-        <Container onPress={() => handleSelectInvestimento()}>
+        <Container onPress={() => handleSelectInvestimento()} key={data.nome}>
           <ItemContainer>
             <ItemNome>{data.nome}</ItemNome>
             <ItemDescription>{data.objetivo}</ItemDescription>
