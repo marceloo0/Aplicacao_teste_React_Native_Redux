@@ -60,7 +60,7 @@ const Resgate = () => {
       const total = texto.reduce((acc, x) => acc + x.valor, 0);
       setCount(total);
     },
-    [texto],
+    [],
   );
 
   const handleSelectInvestimento = (count, saldo) => {
