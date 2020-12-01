@@ -129,7 +129,7 @@ const Resgate = () => {
                   <Edit>
                     <TextLabel color={'#135ee9'}>Valor a resgatar</TextLabel>
                     <TextInput
-                      value={String(texto)}
+                      value={texto}
                       placeholder="R$ 0,00"
                       keyboardType="numeric"
                       onEndEditing={(e) =>
