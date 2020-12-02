@@ -72,19 +72,7 @@ export const ActionButtom = styled.View`
   bottom: 0px;
   width: 100%;
 `;
-export const Button = styled(RectButton)`
-  background: #ffff00;
-  height: 60px;
-  width: 100%;
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
-`;
-export const TextBtn = styled.Text`
-  color: #135ee9;
-  font-size: 20px;
-  font-weight: bold;
-`;
+
 export const TextLabel = styled.Text`
   color: ${(props) => (props.color ? '#135ee9' : 'red')};
   font-size: 12px;
@@ -122,6 +110,21 @@ export const DadosFooterContainer = styled.View`
 `;
 export const DadosFooterNome = styled.Text`
   color: #414040;
+  font-size: 20px;
+  font-weight: bold;
+`;
+export const Button = styled(RectButton)`
+  position: absolute;
+  bottom: 0px;
+  background: #ffff00;
+  height: 60px;
+  width: 100%;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+`;
+export const TextBtn = styled.Text`
+  color: #135ee9;
   font-size: 20px;
   font-weight: bold;
 `;

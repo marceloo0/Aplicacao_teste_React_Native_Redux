@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 
+import Header from '../../components/Header';
 import ItemInvestimento from '../../components/ItemInvestimento';
 
-import {Container, Header, Title, Line, TopBox, TopText} from './styles';
+import {Container, TopBox, TopText} from './styles';
 
 const Investimentos = () => {
   const [data, setData] = useState([]);
@@ -21,10 +22,7 @@ const Investimentos = () => {
 
   return (
     <Container>
-      <Header>
-        <Title>Resgate</Title>
-      </Header>
-      <Line />
+      <Header />
       <TopBox>
         <TopText>INVESTIMENTOS</TopText>
         <TopText>R$</TopText>

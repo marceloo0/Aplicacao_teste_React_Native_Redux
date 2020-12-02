@@ -1,5 +1,4 @@
 import React from 'react';
-import {Alert} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
 
 import {
@@ -21,13 +20,6 @@ const ItemInvestimento = ({data}) => {
     });
   };
 
-  const handleClick = () => {
-    Alert.alert(
-      'Erro ao acessa este investimento',
-      'O investimento não está acessivel devido a carência.',
-    );
-  };
-
   return (
     <>
       {data.indicadorCarencia === 'N' ? (
@@ -39,7 +31,7 @@ const ItemInvestimento = ({data}) => {
           <ItemValor>{data.saldoTotalDisponivel}</ItemValor>
         </Container>
       ) : (
-        <Container disabled={true} onPress={() => handleClick()}>
+        <Container disabled={true}>
           <ItemContainer>
             <ItemNome>{data.nome}</ItemNome>
             <ItemDescription>{data.objetivo}</ItemDescription>
